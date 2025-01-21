@@ -1,3 +1,4 @@
+![Image](https://github.com/user-attachments/assets/d9fb66b0-5826-430f-91c3-88a2a05c9b56)
 # Personal_Portfolio 
 
 Prerequisites:
@@ -48,3 +49,4 @@ Add the Font Link: Include this in the <head> section to use the font.
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
 In summary, you will use HTML, CSS, and JavaScript (with Bootstrap, jQuery, and AOS) to create a stylish and interactive portfolio website that’s responsive on all devices.
+
