@@ -55,3 +55,44 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+// CONTACT SECTION
+
+  // Form Submit Handling
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get form fields
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const status = document.getElementById("formStatus");
+
+    // Basic validation
+    if (!name || !email || !message) {
+      status.textContent = "Please fill in all fields.";
+      status.style.color = "red";
+      return;
+    }
+
+    // Prepare EmailJS parameters
+    const templateParams = {
+      name: name,
+      email: email,
+      message: message,
+    };
+
+    // Send the email
+    emailjs.send("service_zx2iulc", "template_myvgt5w", templateParams)
+      .then(function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+        status.textContent = "Message sent successfully!";
+        status.style.color = "green";
+        document.getElementById("contactForm").reset();
+      }, function (error) {
+        console.log("FAILED...", error);
+        status.textContent = "Failed to send message. Please try again later.";
+        status.style.color = "red";
+      });
+  });
+
